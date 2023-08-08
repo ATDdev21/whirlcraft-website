@@ -16,19 +16,29 @@
         <div class="text" id="text">404 - Server Not Found</div>
         <div class="desc" id="desc">This is a web browser, not a Minecraft client.</div>
 
-        <div class="serverinfo" id="serverinfo">
-            <div class="hostname" id="hostname"></div>
-            <hr>
-            <div class="static-text">
-                <div class="status">Whirlcraft Server Status:</div>
-                <br>
-                <div class="players">Online Players:</div>
+        <div class="generalserverinfo">
+            <div class="serverinfo" id="serverinfo">
+                <div class="hostname" id="hostname"></div>
+                <hr>
+                <div class="static-text">
+                    <div class="status">Whirlcraft Server Status:</div>
+                    <br>
+                    <div class="playersonline">Online Players:</div>
+                </div>
+
+                <div class="dynamic-text">
+                    <div class="dynamic-status" id="status"></div>
+                    <br>
+                    <div class="dynamic-players" id="players"></div>
+                </div>
             </div>
 
-            <div class="dynamic-text">
-                <div class="dynamic-status" id="status"></div>
-                <br>
-                <div class="dynamic-players" id="players"></div>
+            <div class="players">
+                <div class="playerstitle">Currently Online</div>
+                <hr>
+                <ul class="playerlist" id="playerlist">
+
+                </ul>
             </div>
         </div>
 
@@ -41,7 +51,7 @@
         </div>
 
         <div class="redirect" id="redirect">Get Minecraft <a href="https://www.minecraft.net/">Here</a> | <a href="https://github.com/ATDdev21/whirlcraft-website">Source Code</a></div>
-
+        <div class="beta" id="beta">This website is still in development.</div>
     </div>
 </body>
 </html>

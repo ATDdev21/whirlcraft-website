@@ -6,6 +6,7 @@ try {
             const hostname = json.hostname
             const status = json.online
             const playercount= json.players.online
+            const playernames =json.players.list
 
             const currenthostname = document.getElementById("hostname")
             if (hostname == "play.whirlcraft.xyz") {
@@ -18,21 +19,30 @@ try {
             if (status == true) {
                 const embedstatus = "online"
                 currentstatus.innerHTML = "Online"
-                document.querySelector('meta[property="og:title"]').setAttribute("content", `Server is ${embedstatus}`);
             } else if (status == false) {
                 currentstatus.innerHTML = "Offline"
             }
             
-            const currentplayercount = document.getElementById("players")
+            const currentplayercount = document.getElementById("players") ||document.getElementById("playerlist")
             if (playercount < 1) {
                 currentplayercount.innerHTML = "None"
-            } else {
+            } else{
                 currentplayercount.innerHTML = playercount
             }
 
-            console.log(json)
-            
-            document.querySelector('meta[property="og:description"]').setAttribute("content", `${playercount} Players Online`);
+            const playernamesdiv = document.getElementById("playerlist");
+            if (playercount >= 1) {
+                playernamesdiv.innerHTML = "";
+
+                playernames.forEach((player) => {
+                    let li = document.createElement("li");
+                    li.innerHTML = player.name; 
+                    playernamesdiv.appendChild(li);
+                });
+            } else {
+                playernamesdiv.innerHTML = "None"
+            }
+
         })
 
 } catch (error) {
