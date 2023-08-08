@@ -6,14 +6,31 @@
     <title>Server Not Found</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script src="/js/index.js"></script>
+    <meta id="embedtitle" content="" property="og:title" />
+    <meta id="embeddesc" content="" property="og:description" />
 </head>
 <body>
     
     <div class="content" id="content">
 
-
         <div class="text" id="text">404 - Server Not Found</div>
-        <div class="desc" id="desc">This is a web browser, not a minecraft client.</div>
+        <div class="desc" id="desc">This is a web browser, not a Minecraft client.</div>
+
+        <div class="serverinfo" id="serverinfo">
+            <div class="hostname" id="hostname"></div>
+            <hr>
+            <div class="static-text">
+                <div class="status">Whirlcraft Server Status:</div>
+                <br>
+                <div class="players">Online Players:</div>
+            </div>
+
+            <div class="dynamic-text">
+                <div class="dynamic-status" id="status"></div>
+                <br>
+                <div class="dynamic-players" id="players"></div>
+            </div>
+        </div>
 
         <div class="ambience-sound" id="ambience-sound">
             <a href="#" id="play">
@@ -23,7 +40,7 @@
             <script src="/js/play.js"></script>
         </div>
 
-        <div class="redirect" id="redirect">Get Minecraft <a href="https://www.minecraft.net/">Here</a> | <a href="https://github.com/ATDdev21/whirlcraft-website">Website Source Code</a></div>
+        <div class="redirect" id="redirect">Get Minecraft <a href="https://www.minecraft.net/">Here</a> | <a href="https://github.com/ATDdev21/whirlcraft-website">Source Code</a></div>
 
     </div>
 </body>
