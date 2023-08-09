@@ -1,165 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;600;700&display=swap');
 
-html {
-    height: 100%;
-}
-
-    body {
-        margin: 0;
+    html {
         height: 100%;
-        user-select: none;
     }
 
-    #content {
-        position: fixed;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-        /*border: solid 1px red;*/
-    }
+        body {
+            margin: 0;
+            height: 100%;
+            user-select: none;
+        }
 
-    a:-webkit-any-link {
-        text-decoration: underline;
-        color: white;
-    }
+        #content {
+            position: fixed;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            /*border: solid 1px red;*/
+        }
 
-    .text {
-        color: white;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: 700;
-        font-size: 50px;
-        top: 100px;
-        left: 50%;
-        transform: translate(-50%);
-        user-select: none;
-        position: fixed;
+        a:-webkit-any-link {
+            text-decoration: underline;
+            color: white;
+        }
 
+        .text {
+            color: white;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 700;
+            font-size: 50px;
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%);
+            user-select: none;
+            position: fixed;
+        }
+        .desc {
+            color: white;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 400;
+            font-size: 20px;
+            top: 190px;
+            left: 50%;
+            transform: translate(-50%);
+            user-select: none;
+            position: fixed;
+        }
+
+        .serverinfo {
+            height: auto;
+            width: 550px;
+            border: solid 2px white;
+            border-radius: 10px;
+            top: 375px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+
+        .hostname {
+            color: white;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 400;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            user-select: text;
+        }
+
+        .static-text {
+            width: 300px;
+            color: white;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 200;
+            font-size: 20px;
+            text-align: left;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            float: left;
+        }
+
+        .dynamic-text {
+            color: white;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 400;
+            font-size: 20px;
+            text-align: right;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            float: right;
+        }
         
-    }
-    .desc {
-        color: white;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: 400;
-        font-size: 20px;
-        top: 190px;
-        left: 50%;
-        transform: translate(-50%);
-        user-select: none;
-        position: fixed;
-    }
+        .players {
+            height: auto;
+            width: 550px;
+            border: solid 2px white;
+            border-radius: 10px;
+            top: 600px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            overflow: hidden;
+        }
+        
+        .playerstitle {
+            color: white;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 400;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .playerlist {
+            color: white;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 400;
+            font-size: 20px;
+            text-align: center;
+            max-height: 120px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: white;
+            user-select: text;
+        }
+        .playerlist::-webkit-scrollbar {
+            width: 8px;
+        }
+        .playerlist::-webkit-scrollbar-thumb {
+            background-color: white;
+            border: 2px solid transparent;
+            border-radius: 4px;
+        }
+        .playerlist::-webkit-scrollbar-thumb:hover {
+            background-color: transparent;
+        }
 
-    .serverinfo {
-        height: auto;
-        width: 550px;
-        border: solid 2px white;
-        border-radius: 10px;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: fixed;
-    }
-
-    .hostname {
-        color: white;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: 400;
-        font-size: 20px;
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        user-select: text;
-    }
-
-    .static-text {
-        width: 300px;
-        color: white;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: 200;
-        font-size: 20px;
-        text-align: left;
-        margin-top: 10px;
-        margin-left: 10px;
-        margin-bottom: 20px;
-        float: left;
-    }
-
-    .dynamic-text {
-        color: white;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: 400;
-        font-size: 20px;
-        text-align: right;
-        margin-top: 10px;
-        margin-right: 10px;
-        margin-bottom: 20px;
-        float: right;
-    }
-    
-    .players {
-        height: auto;
-        width: 550px;
-        border: solid 2px white;
-        border-radius: 10px;
-        top: calc(50% + 175px);
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: fixed;
-        overflow: hidden;
-    }
-    
-    .playerstitle {
-        color: white;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: 400;
-        font-size: 20px;
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    
-    .playerlist {
-        color: white;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: 400;
-        font-size: 20px;
-        text-align: center;
-        max-height: 120px;
-        overflow-y: auto;
-        scrollbar-width: thin;
-        scrollbar-color: white;
-        user-select: text;
-    }
-    .playerlist::-webkit-scrollbar {
-        width: 8px;
-    }
-    .playerlist::-webkit-scrollbar-thumb {
-        background-color: white;
-        border: 2px solid transparent;
-        border-radius: 4px;
-    }
-    .playerlist::-webkit-scrollbar-thumb:hover {
-        background-color: transparent;
-    }
-
-    .redirect {
-        color: white;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: 300;
-        font-size: 15px;
-        bottom: 50px;
-        left: 50%;
-        transform: translate(-50%);
-        user-select: none;
-        position: fixed;
-    }
-    .beta {
-        color: white;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: 200;
-        font-size: 12px;
-        bottom: 23px;
-        left: 50%;
-        transform: translate(-50%);
-        user-select: none;
-        position: fixed;
-    }
+        .redirect {
+            color: white;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 300;
+            font-size: 15px;
+            bottom: 50px;
+            left: 50%;
+            transform: translate(-50%);
+            user-select: none;
+            position: fixed;
+        }
+        .beta {
+            color: white;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 200;
+            font-size: 12px;
+            bottom: 23px;
+            left: 50%;
+            transform: translate(-50%);
+            user-select: none;
+            position: fixed;
+        }
