@@ -144,7 +144,9 @@
             font-family: 'Source Code Pro', monospace;
             font-weight: 300;
             font-size: 15px;
-            bottom: 50px;
+            top: 0;
+            bottom: 0;
+            margin-top: 930px;
             left: 50%;
             transform: translate(-50%);
             user-select: none;
@@ -155,7 +157,9 @@
             font-family: 'Source Code Pro', monospace;
             font-weight: 200;
             font-size: 12px;
-            bottom: 23px;
+            top: 0;
+            bottom: 0;
+            margin-top: 960px;
             left: 50%;
             transform: translate(-50%);
             user-select: none;
