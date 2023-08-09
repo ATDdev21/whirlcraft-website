@@ -1,50 +1,37 @@
-try {
-    
-    fetch('https://api.mcsrvstat.us/3/play.whirlcraft.xyz')
-        .then(response => response.json())
-        .then(json => {
-            const hostname = json.hostname
-            const status = json.online
-            const playercount= json.players.online
-            const playernames =json.players.list
+function updateServerInfo() {
+    try {
+        //fetch('/.data/testserver.json')
+        fetch('https://api.mcsrvstat.us/3/play.whirlcraft.xyz')
+            .then(response => response.json())
+            .then(json => {
+                const { hostname, online, players } = json;
 
-            const currenthostname = document.getElementById("hostname")
-            if (hostname == "play.whirlcraft.xyz") {
-                currenthostname.innerHTML = hostname
-            } else {
-                currenthostname.innerHTML = "Server Offline"
-            }
+                const currentHostname = document.getElementById("hostname");
+                currentHostname.innerHTML = (hostname === "play.whirlcraft.xyz") ? hostname : "Server Offline";
 
-            const currentstatus = document.getElementById("status")
-            if (status == true) {
-                const embedstatus = "online"
-                currentstatus.innerHTML = "Online"
-            } else if (status == false) {
-                currentstatus.innerHTML = "Offline"
-            }
-            
-            const currentplayercount = document.getElementById("players") ||document.getElementById("playerlist")
-            if (playercount < 1) {
-                currentplayercount.innerHTML = "None"
-            } else{
-                currentplayercount.innerHTML = playercount
-            }
+                const currentStatus = document.getElementById("status");
+                currentStatus.innerHTML = online ? "Online" : "Offline";
 
-            const playernamesdiv = document.getElementById("playerlist");
-            if (playercount >= 1) {
-                playernamesdiv.innerHTML = "";
+                const currentPlayerCount = document.getElementById("players") || document.getElementById("playerlist");
+                currentPlayerCount.innerHTML = (players.online > 0) ? players.online : "None";
 
-                playernames.forEach((player) => {
-                    let li = document.createElement("li");
-                    li.innerHTML = player.name; 
-                    playernamesdiv.appendChild(li);
-                });
-            } else {
-                playernamesdiv.innerHTML = "None"
-            }
-
-        })
-
-} catch (error) {
-    console.log(error)
+                const playerNamesDiv = document.getElementById("playerlist");
+                if (players.online > 0) {
+                    playerNamesDiv.innerHTML = "";
+                    players.list.forEach(player => {
+                        let li = document.createElement("li");
+                        li.innerHTML = player.name;
+                        playerNamesDiv.appendChild(li);
+                    });
+                } else {
+                    playerNamesDiv.innerHTML = "None";
+                }
+            });
+    } catch (error) {
+        console.error(error);
+    }
 }
+
+updateServerInfo();
+
+setInterval(updateServerInfo, 30000);
