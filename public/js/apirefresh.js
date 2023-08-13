@@ -12,7 +12,7 @@ function startCountdown() {
             const minutes = Math.floor(remainingTime / (60 * 1000));
             const seconds = Math.floor((remainingTime % (60 * 1000)) / 1000);
 
-            countdownTimerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            countdownTimerElement.textContent = `~${minutes}:${seconds.toString().padStart(2, '0')}`;
 
             if (remainingTime === 0) {
                 startCountdown();
