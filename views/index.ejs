@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Server Not Found</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <script src="/js/index.js"></script>
+    <script src="/js/serverinfo.js"></script>
+    <script src="/js/copyhostname.js"></script>
+    <script src="/js/apirefresh.js"></script>
 </head>
 <body>
     <div class="content" id="content">
+
+        <div id="popupMessage" class="popup-message"></div>
 
         <div class="everything">
             <div class="text" id="text">404 - Server Not Found</div>
@@ -17,17 +21,24 @@
             <div class="generalserverinfo">
                 <div class="serverinfo" id="serverinfo">
                     <div class="hostname" id="hostname"></div>
+                        <a href="#" onclick="copyName()">
+                            <img class="copyhostname" id="copyhostname" src="/.data/images/copy.png" alt="copy"title="Copy to Clipboard">
+                        </a>
                     <hr>
                     <div class="static-text">
                         <div class="status">Whirlcraft Server Status:</div>
                         <br>
                         <div class="playersonline">Online Players:</div>
+                        <br>
+                        <div class="apirefreshtimer">Time Until Refresh:</div>
                     </div>
 
                     <div class="dynamic-text">
                         <div class="dynamic-status" id="status"></div>
                         <br>
                         <div class="dynamic-players" id="players"></div>
+                        <br>
+                        <div class="countdowntimer" id="countdowntimer"></div>
                     </div>
                 </div>
 
