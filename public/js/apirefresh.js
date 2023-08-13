@@ -1,11 +1,6 @@
 function startCountdown() {
     const countdownTimerElement = document.getElementById('countdowntimer');
-
-    if (!countdownTimerElement) {
-        console.error("countdownTimerElement not found.");
-        return;
-    }
-
+    
     function updateCountdown() {
         const startTime = new Date().getTime();
         const targetTime = startTime + 5 * 60 * 1000;
