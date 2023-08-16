@@ -1,2 +1,5 @@
+.gitignore
 node_modules
 push.bat
+SSL
+app.js
